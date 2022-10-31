@@ -26,6 +26,7 @@ namespace Emp_wage
                 else
                 {
                     Console.WriteLine("Present for half day");
+                    empHr = 4;
                 }
             }
             else
