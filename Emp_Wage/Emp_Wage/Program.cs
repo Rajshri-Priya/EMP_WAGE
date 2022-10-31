@@ -10,8 +10,12 @@ namespace Emp_wage
             int empHr = 0;
             int empRatePerHr = 20;
             int totalSalary = 0;
+            int totalWorkingHr = 0;
+            int maxWorkingHr = 99;
+            int no_Of_Days = 0;
+            int total_No_Of_Days = 20;
             Random random = new Random();
-            for (int i = 0; i < 20; i++)
+            while (totalWorkingHr < maxWorkingHr && no_Of_Days < total_No_Of_Days)
             {
                 //computation
                 int empCheck = random.Next(0, 2);
@@ -36,12 +40,18 @@ namespace Emp_wage
                 else
                 {
                     Console.WriteLine("Employe is Absent");
+                    empHr = 0;
                 }
+                ;
                 int salary = (empHr * empRatePerHr);
                 Console.WriteLine("Employe salary :" + salary);
                 totalSalary = totalSalary + salary;
+                totalWorkingHr = totalWorkingHr + empHr;
+
+                total_No_Of_Days++;
             }
             Console.WriteLine("Employe Totalsalary :" + totalSalary);
+            Console.WriteLine("Employe TotalEmpHr :" + totalWorkingHr);
         }
         
     }
