@@ -5,9 +5,9 @@ namespace Emp_wage
     {
         static void Main(string[] args)
         {
-             Console.WriteLine("CALCULATING DAILY WAGES");
+
+            Console.WriteLine("CALCULATING DAILY WAGES");
             int IS_PRESENT = 1;
-            int isFullTime = 1;
             int empHr = 0;
             int empRatePerHr = 20;
             Random random = new Random();
@@ -18,15 +18,17 @@ namespace Emp_wage
             {
                 Console.WriteLine("Employe is Present");
                 int empCheckFull = random.Next(0, 2);
-                if (empCheckFull == isFullTime)
+
+                switch (empCheckFull)
                 {
-                    Console.WriteLine("present for fullday");
-                    empHr = 8;
-                }
-                else
-                {
-                    Console.WriteLine("Present for half day");
-                    empHr = 4;
+                    case 1:
+                        Console.WriteLine("present for fullday");
+                        empHr = 8;
+                        break;
+                    default:
+                        Console.WriteLine("Present for half day");
+                        empHr = 4;
+                        break;
                 }
             }
             else
