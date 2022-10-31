@@ -17,7 +17,9 @@ namespace Emp_wage
             else
             {
                 Console.WriteLine("Employe is Absent");
+                Console.ReadLine();
             }
         }
+        
     }
 }
